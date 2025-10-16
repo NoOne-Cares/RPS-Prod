@@ -7,7 +7,7 @@ const nonceHandler = AsyncHandler(async (req, res) => {
     const nonce = randomBytes(16).toString('hex');
     res.cookie('siwe-nonce', nonce, {
         httpOnly: true,
-        sameSite: 'strict'
+        sameSite: 'none'
     });
     res.send(nonce);
 
@@ -30,7 +30,7 @@ const verifyHandler = AsyncHandler(async (req, res) => {
 
     res.cookie('siwe-session', siweMessage.address, {
         httpOnly: true,
-        sameSite: 'strict',
+        sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000
     });
 
@@ -40,7 +40,7 @@ const verifyHandler = AsyncHandler(async (req, res) => {
 const logoutHandler = AsyncHandler(async (req, res) => {
     res.clearCookie('siwe-session', {
         httpOnly: true,
-        sameSite: 'strict',
+        sameSite: 'none',
         secure: process.env.NODE_ENV === 'production',
     });
 
