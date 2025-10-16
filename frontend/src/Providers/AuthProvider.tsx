@@ -6,11 +6,11 @@ import { disconnectSocket } from '../utils/Socket.ts';
 
 const store = getDefaultStore();
 
-
+const API_BASE = import.meta.env.VITE_BACKEND_URL;
 const authenticationAdapter = createAuthenticationAdapter({
 
     getNonce: async () => {
-        const response = await fetch('/api/auth/nonce');
+        const response = await fetch(`${API_BASE}/api/auth/nonce`);
         return await response.text();
     },
     createMessage: ({ nonce, address, chainId }) => {
@@ -25,7 +25,7 @@ const authenticationAdapter = createAuthenticationAdapter({
         });
     },
     verify: async ({ message, signature }) => {
-        const verifyRes = await fetch('/api/auth/verify', {
+        const verifyRes = await fetch(`${API_BASE}/api/auth/verify`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message, signature }),
@@ -38,7 +38,7 @@ const authenticationAdapter = createAuthenticationAdapter({
         return Boolean(verifyRes.ok);
     },
     signOut: async () => {
-        const res = await fetch('/api/auth/logout');
+        const res = await fetch(`${API_BASE}/api/auth/logout`);
         if (res.ok) {
             store.set(AuthAtom, 'unauthenticated');
             disconnectSocket()

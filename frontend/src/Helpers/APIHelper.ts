@@ -1,5 +1,6 @@
 
 import { mapBackendGameToFrontend } from "./handleBackendData.ts";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 export type CreateGamePayload = {
     contractId: `0x${string}`;
     player1: `0x${string}`;
@@ -8,7 +9,7 @@ export type CreateGamePayload = {
     stake: number;
 };
 export const createGame = async (payload: CreateGamePayload) => {
-    const res = await fetch('/api/games/creategame', {
+    const res = await fetch(`${BACKEND_URL}/api/games/creategame`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +27,7 @@ export const createGame = async (payload: CreateGamePayload) => {
 };
 
 export const getMyGames = async (player1: `0x${string}`) => {
-    const url = `/api/games/gmaemyme?player1=${encodeURIComponent(player1)}`;
+    const url = `${BACKEND_URL}/api/games/gmaemyme?player1=${encodeURIComponent(player1)}`;
 
     const res = await fetch(url, {
         method: 'GET',
@@ -47,7 +48,7 @@ export const getMyGames = async (player1: `0x${string}`) => {
 
 ///decide winner
 export const decideWinner = async (contractId: string, player1Move: number) => {
-    const res = await fetch('/api/games/revel', {
+    const res = await fetch(`${BACKEND_URL}/api/games/revel`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ export const decideWinner = async (contractId: string, player1Move: number) => {
 export const getGamesByPlayer2 = async (player2: `0x${string}`) => {
 
 
-    const res = await fetch(`/api/games/gameforme?player=${encodeURIComponent(player2)}`, {
+    const res = await fetch(`${BACKEND_URL}/api/games/gameforme?player=${encodeURIComponent(player2)}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -87,7 +88,7 @@ export const getGamesByPlayer2 = async (player2: `0x${string}`) => {
 
 
 export const getFinishedGames = async (player: `0x${string}`) => {
-    const res = await fetch(`/api/games/getallgames?player=${encodeURIComponent(player)}`, {
+    const res = await fetch(`${BACKEND_URL}/api/games/getallgames?player=${encodeURIComponent(player)}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -106,7 +107,7 @@ export const getFinishedGames = async (player: `0x${string}`) => {
 
 
 export const secondMove = async (contractId: `0x${string}`, player2Move: number) => {
-    const res = await fetch('/api/games/secondmove', {
+    const res = await fetch(`${BACKEND_URL}/api/games/secondmove`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -126,7 +127,7 @@ export const secondMove = async (contractId: `0x${string}`, player2Move: number)
 export const getPlayer2Move = async (contractId: `0x${string}`) => {
     // const res = await fetch(`/api/games/gameforme?player=${encodeURIComponent(player2)}`,
 
-    const res = await fetch(`/api/games/getsecondmove?contract=${encodeURIComponent(contractId)}`, {
+    const res = await fetch(`${BACKEND_URL}/api/games/getsecondmove?contract=${encodeURIComponent(contractId)}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -143,7 +144,7 @@ export const getPlayer2Move = async (contractId: `0x${string}`) => {
 };
 
 export const deleteGame = async (contractId: `0x${string}`) => {
-    const res = await fetch('/api/games/deltegame', {
+    const res = await fetch(`${BACKEND_URL}/api/games/deltegame`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

@@ -13,17 +13,17 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/',
-  server: {
-    proxy: {
-      '/api': {
-        target: process.env.VITE_BACKEN_URL ?? "http://localhost:8000",
-        changeOrigin: true,
-      },
-      '/socket.io': {
-        target: process.env.VITE_BACKEN_URL ?? "http://localhost:8000",
-        ws: true,
-        changeOrigin: true
-      }
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: process.env.VITE_BACKEN_URL ?? "http://localhost:8000",
+  //       changeOrigin: true,
+  //     },
+  //     '/socket.io': {
+  //       target: process.env.VITE_BACKEN_URL ?? "http://localhost:8000",
+  //       ws: true,
+  //       changeOrigin: true
+  //     }
+  //   },
+  // },
 })
