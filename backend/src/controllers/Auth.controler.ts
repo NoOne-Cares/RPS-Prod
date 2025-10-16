@@ -8,7 +8,7 @@ const nonceHandler = AsyncHandler(async (req, res) => {
     res.cookie('siwe-nonce', nonce, {
         httpOnly: true,
         sameSite: 'none',
-        secure: process.env.NODE_ENV === 'production'
+        secure: true
     });
     res.send(nonce);
 
@@ -18,8 +18,8 @@ const verifyHandler = AsyncHandler(async (req, res) => {
     const { message, signature } = req.body;
     const nonce = req.cookies['siwe-nonce'];
 
-    if (!message || !signature || !nonce) {
-        return res.status(400).json({ message: 'Missing message, signature, or nonce' });
+    if (!message || !signature) {
+        return res.status(400).json({ message: 'Missing message, signature' });
     }
     if (!nonce) {
         return res.status(400).json({ message: "Nonce is missing" });
@@ -36,7 +36,7 @@ const verifyHandler = AsyncHandler(async (req, res) => {
         httpOnly: true,
         sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000,
-        secure: process.env.NODE_ENV === 'production'
+        secure: true
     });
 
     return res.status(200).json({ ok: true });
@@ -46,7 +46,7 @@ const logoutHandler = AsyncHandler(async (req, res) => {
     res.clearCookie('siwe-session', {
         httpOnly: true,
         sameSite: 'none',
-        secure: process.env.NODE_ENV === 'production',
+        secure: true,
     });
 
     return res.status(200).json({ message: 'Logged out successfully' });
