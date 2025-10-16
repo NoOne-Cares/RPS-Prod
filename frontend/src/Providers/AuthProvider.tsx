@@ -8,6 +8,7 @@ const store = getDefaultStore();
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
 if (!API_BASE) console.log("api base is missing")
+console.log(API_BASE + 2)
 const authenticationAdapter = createAuthenticationAdapter({
 
     getNonce: async () => {
