@@ -7,8 +7,10 @@ const playerSocketMap = new Map<string, string>();
 
 export const startSocketServer = (server: HttpServer) => {
     const io = new IOServer(server, {
+        path: '/socket.io',
         cors: {
             origin: "*",
+            credentials: true,
         },
     });
 

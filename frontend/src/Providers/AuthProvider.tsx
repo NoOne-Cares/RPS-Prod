@@ -7,6 +7,7 @@ import { disconnectSocket } from '../utils/Socket.ts';
 const store = getDefaultStore();
 
 const API_BASE = import.meta.env.VITE_BACKEND_URL;
+console.log(API_BASE + 2)
 const authenticationAdapter = createAuthenticationAdapter({
 
     getNonce: async () => {
