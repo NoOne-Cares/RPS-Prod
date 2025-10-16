@@ -8,7 +8,7 @@ import { AuthAtom, updateGame, GameCretedForMe, CompletedGames } from "./utils/s
 import { disconnectSocket } from './utils/Socket.ts';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import { useGameSocket } from './hook/useSocket.ts';
+import { useGameSocket } from './hook/useSocket.tsx';
 import { useSetAtom } from 'jotai';
 
 
