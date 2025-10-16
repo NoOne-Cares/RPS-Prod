@@ -47,7 +47,7 @@ export const getMyGames = async (player1: `0x${string}`) => {
 
 ///decide winner
 export const decideWinner = async (contractId: string, player1Move: number) => {
-    const res = await fetch('http://localhost:8000/api/games/revel', {
+    const res = await fetch('/api/games/revel', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export const getGamesByPlayer2 = async (player2: `0x${string}`) => {
 
 
 export const getFinishedGames = async (player: `0x${string}`) => {
-    const res = await fetch(`api/games/getallgames?player=${encodeURIComponent(player)}`, {
+    const res = await fetch(`/api/games/getallgames?player=${encodeURIComponent(player)}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ export const getFinishedGames = async (player: `0x${string}`) => {
 
 
 export const secondMove = async (contractId: `0x${string}`, player2Move: number) => {
-    const res = await fetch('http://localhost:8000/api/games/secondmove', {
+    const res = await fetch('/api/games/secondmove', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

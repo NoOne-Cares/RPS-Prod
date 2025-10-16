@@ -26,7 +26,8 @@ const JoinGame = () => {
             try {
                 const tx = await play(game.contractAddress!, selected, game.value)
                 console.log(tx)
-                await secondMove(game.contractAddress!, selected)
+                const res = await secondMove(game.contractAddress!, selected)
+                console.log(res)
                 setGamesForMe(prevGames =>
                     prevGames.filter(prev => game.contractAddress !== prev.contractAddress)
                 )
@@ -34,7 +35,7 @@ const JoinGame = () => {
                 notifySuccess("game move send successsfully")
             } catch (error) {
                 console.log(error)
-                notifyError("fail to send move")
+                notifyError("fail to send move while request 3")
             }
 
         } else {
