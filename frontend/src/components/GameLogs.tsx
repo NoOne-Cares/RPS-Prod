@@ -1,8 +1,8 @@
 import GameHistory from "./GameHistory";
 import { useAtom } from "jotai";
-import { CompletedGames } from "../utils/store";
+import { CompletedGames } from "../utils/store.ts";
 import { useEffect } from "react";
-import { getFinishedGames } from "../Helpers/APIHelper";
+import { getFinishedGames } from "../Helpers/APIHelper.ts";
 import { useAccount } from "wagmi";
 
 const GameLogs = () => {

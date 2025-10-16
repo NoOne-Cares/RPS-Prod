@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { connectSocket } from '../utils/Socket'
-import type { Game } from '../types/Types';
+import { connectSocket } from '../utils/Socket.ts'
+import type { Game } from '../types/Types.ts';
 type SocketEvents = {
     reciveCreatedGame: (data: Game) => void;
     reciveSecondMove: (data: Game) => void;

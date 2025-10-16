@@ -1,4 +1,4 @@
-import type { Game } from "../types/Types"; // wherever your frontend type is defined
+import type { Game } from "../types/Types.ts"; // wherever your frontend type is defined
 
 export const mapBackendGameToFrontend = (backendGame: any): Game => {
     return {

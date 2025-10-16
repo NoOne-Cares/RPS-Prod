@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CreateGame from "./CreateGame";
-import JoinGame from "./JoinGame";
-import GameLogs from "./GameLogs";
+import CreateGame from "./CreateGame.tsx";
+import JoinGame from "./JoinGame.tsx";
+import GameLogs from "./GameLogs.tsx";
 
 
 

@@ -1,6 +1,6 @@
 // src/hooks/useJ2Timeout.ts
 import { useWriteContract, usePublicClient, useAccount } from 'wagmi';
-import { getGameContractConfig } from '../Helpers/gameContract';
+import { getGameContractConfig } from '../Helpers/gameContract.ts';
 
 export function useJ2Timeout() {
     const { address } = useAccount()

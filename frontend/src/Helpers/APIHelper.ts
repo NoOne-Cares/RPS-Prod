@@ -1,5 +1,5 @@
 
-import { mapBackendGameToFrontend } from "./handleBackendData";
+import { mapBackendGameToFrontend } from "./handleBackendData.ts";
 export type CreateGamePayload = {
     contractId: `0x${string}`;
     player1: `0x${string}`;

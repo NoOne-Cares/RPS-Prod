@@ -1,6 +1,6 @@
 import { atomWithStorage } from 'jotai/utils'
 import { atom } from 'jotai'
-import type { AuthStatus, CreatedGame, Game } from '../types/Types'
+import type { AuthStatus, CreatedGame, Game } from '../types/Types.ts'
 
 export const Games = atom<Game[]>()
 
@@ -83,9 +83,3 @@ export const updatePlayer1MoveByContract = atom(
     set(GameCreatedByMe, updatedGames)
   }
 )
-
-// const updateMove = useSetAtom(updatePlayer1MoveByContract)
-
-//   const handleClick = () => {
-//     updateMove('0xabc123...' as `0x${string}`)
-//   }

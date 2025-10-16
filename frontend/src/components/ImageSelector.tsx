@@ -1,17 +1,16 @@
 import { useState } from "react";
-import ImageOptions from "../utils/imageOptions";
-import type { Game } from "../types/Types";
+import ImageOptions from "../utils/imageOptions.ts";
+import type { Game } from "../types/Types.ts";
 import { useAccount } from "wagmi";
-import { useDeployContract } from "../hook/useDeployContract";
-import { connectSocket } from '../utils/Socket'
-// import { useGameSocket } from "../hook/useSocket";
+import { useDeployContract } from "../hook/useDeployContract.ts";
+import { connectSocket } from '../utils/Socket.ts'
 import { ToastContainer, toast } from 'react-toastify';
 import { ethers } from 'ethers'
-import { hash } from "../utils/SaltGenerator";
+import { hash } from "../utils/SaltGenerator.ts";
 import { useSetAtom } from "jotai";
-import { GameCreatedByMe } from "../utils/store";
-import { createGame } from "../Helpers/APIHelper";
-import { type CreateGamePayload } from "../Helpers/APIHelper";
+import { GameCreatedByMe } from "../utils/store.ts";
+import { createGame } from "../Helpers/APIHelper.ts";
+import { type CreateGamePayload } from "../Helpers/APIHelper.ts";
 const ImageSelector = () => {
     const { address } = useAccount()
     const { deployContractToChain } = useDeployContract();

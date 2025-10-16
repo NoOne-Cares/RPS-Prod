@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ImageOptions from "../utils/imageOptions";
-import type { Game } from "../types/Types";
+import ImageOptions from "../utils/imageOptions.tsx";
+import type { Game } from "../types/Types.ts";
 
 type JoinGameCardProps = {
     games: Game[];

@@ -1,6 +1,6 @@
 import React from "react";
-import ImageOptions from "../utils/imageOptions";
-import type { Game } from "../types/Types";
+import ImageOptions from "../utils/imageOptions.ts";
+import type { Game } from "../types/Types.ts";
 
 type Props = {
     games: Game[];

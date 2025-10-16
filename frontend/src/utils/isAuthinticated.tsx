@@ -1,6 +1,6 @@
 import { useSetAtom } from "jotai";
 import { useEffect } from "react";
-import { AuthAtom } from "./store";
+import { AuthAtom } from "./store.ts";
 
 export function useAuthenticationStatus() {
     const setAuthStatus = useSetAtom(AuthAtom);

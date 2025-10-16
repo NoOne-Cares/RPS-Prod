@@ -1,4 +1,4 @@
-import type { Game, CreatedGame } from '../types/Types'
+import type { Game, CreatedGame } from '../types/Types.ts'
 
 export const getGameByContractAddress = (
     games: Game[] | CreatedGame[],

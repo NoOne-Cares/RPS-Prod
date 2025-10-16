@@ -1,4 +1,4 @@
-import GameSwitcher from "../components/GameSwitcher"
+import GameSwitcher from "../components/GameSwitcher.tsx"
 import { AuthAtom } from "../utils/store"
 import { useAtomValue } from "jotai"
 import { Navigate } from "react-router-dom";

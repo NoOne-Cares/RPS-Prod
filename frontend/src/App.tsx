@@ -2,13 +2,13 @@
 import './App.css'
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Home, Page404, Game } from './pages';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar.tsx';
 import { useAtomValue } from "jotai";
-import { AuthAtom, updateGame, GameCretedForMe, CompletedGames } from "./utils/store";
-import { disconnectSocket } from './utils/Socket';
+import { AuthAtom, updateGame, GameCretedForMe, CompletedGames } from "./utils/store.ts";
+import { disconnectSocket } from './utils/Socket.ts';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import { useGameSocket } from './hook/useSocket';
+import { useGameSocket } from './hook/useSocket.ts';
 import { useSetAtom } from 'jotai';
 
 

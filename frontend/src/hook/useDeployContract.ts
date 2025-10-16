@@ -5,11 +5,11 @@ import {
 } from 'wagmi'
 
 import { keccak256, solidityPacked, parseEther } from "ethers";
-import { abi, bytecode } from '../Helpers/contractHelper'
-import type { Game } from '../types/Types'
-import { generateSalt } from '../utils/SaltGenerator'
+import { abi, bytecode } from '../Helpers/contractHelper.ts'
+import type { Game } from '../types/Types.ts'
+import { generateSalt } from '../utils/SaltGenerator.ts'
 import { useSetAtom } from 'jotai'
-import { CreatedGamesWithSalt } from '../utils/store'
+import { CreatedGamesWithSalt } from '../utils/store.ts'
 
 export function useDeployContract() {
     const { address } = useAccount()

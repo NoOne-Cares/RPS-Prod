@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaEthereum } from "react-icons/fa";
 import { useAtomValue } from "jotai";
-import { AuthAtom } from "../utils/store";
+import { AuthAtom } from "../utils/store.ts";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const HeroHome = () => {

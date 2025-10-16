@@ -1,5 +1,5 @@
 
-import { getGameContractConfig } from '../Helpers/gameContract';
+import { getGameContractConfig } from '../Helpers/gameContract.ts';
 import { useWriteContract, usePublicClient, useAccount } from 'wagmi';
 
 export function useSolve() {
