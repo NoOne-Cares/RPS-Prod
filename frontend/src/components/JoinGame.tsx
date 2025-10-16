@@ -1,13 +1,13 @@
-import JoinGameCard from "./JoinGameCard"
-import type { Game } from "../types/Types";
+import JoinGameCard from "./JoinGameCard.tsx"
+import type { Game } from "../types/Types.ts";
 import { useAccount } from "wagmi";
 import { useAtom } from "jotai";
-import { GameCretedForMe } from "../utils/store";
-import { getSocket } from "../utils/Socket";
-import { getGamesByPlayer2, secondMove } from "../Helpers/APIHelper";
+import { GameCretedForMe } from "../utils/store.ts";
+import { getSocket } from "../utils/Socket.ts";
+import { getGamesByPlayer2, secondMove } from "../Helpers/APIHelper.ts";
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from "react";
-import { usePlay } from "../hook/usePlay";
+import { usePlay } from "../hook/usePlay.ts";
 
 const JoinGame = () => {
     const { address } = useAccount()

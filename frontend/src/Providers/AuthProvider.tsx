@@ -1,8 +1,8 @@
 import { createAuthenticationAdapter } from '@rainbow-me/rainbowkit';
 import { createSiweMessage } from 'viem/siwe';
-import { AuthAtom } from '../utils/store';
+import { AuthAtom } from '../utils/store.ts';
 import { getDefaultStore } from 'jotai';
-import { disconnectSocket } from '../utils/Socket';
+import { disconnectSocket } from '../utils/Socket.ts';
 
 const store = getDefaultStore();
 

@@ -1,4 +1,4 @@
-import { type Option } from "../types/Types";
+import { type Option } from "../types/Types.ts";
 const ImageOptions: Option[] = [
     { label: "Rock", value: 1, image: "https://raw.githubusercontent.com/NoOne-Cares/RPS-Prod/refs/heads/main/frontend/public/Rock.png" },
     { label: "Paper", value: 2, image: "https://raw.githubusercontent.com/NoOne-Cares/RPS-Prod/refs/heads/main/frontend/public/Paper.png" },

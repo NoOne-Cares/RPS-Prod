@@ -1,9 +1,9 @@
-import HeroHome from "../components/HeroHome"
+import HeroHome from "../components/HeroHome.tsx"
 import { useAccount } from 'wagmi'
 import { useAtomValue } from "jotai"
-import { AuthAtom } from "../utils/store"
+import { AuthAtom } from "../utils/store.ts"
 import { useEffect } from "react"
-import { connectSocket } from "../utils/Socket"
+import { connectSocket } from "../utils/Socket.ts"
 
 const Home = () => {
     const { address } = useAccount()

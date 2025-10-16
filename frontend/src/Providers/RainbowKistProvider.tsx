@@ -3,10 +3,10 @@ import { WagmiProvider } from 'wagmi'
 import config from '../rainbowKit'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 import { RainbowKitAuthenticationProvider } from '@rainbow-me/rainbowkit'
-import authenticationAdapter from './AuthProvider'
-import { useAuthenticationStatus } from '../utils/isAuthinticated'
+import authenticationAdapter from './AuthProvider.tsx'
+import { useAuthenticationStatus } from '../utils/isAuthinticated.tsx'
 import { useAtomValue } from 'jotai'
-import { AuthAtom } from '../utils/store'
+import { AuthAtom } from '../utils/store.ts'
 
 const queryClient = new QueryClient();
 
