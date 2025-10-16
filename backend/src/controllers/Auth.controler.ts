@@ -31,7 +31,8 @@ const verifyHandler = AsyncHandler(async (req, res) => {
     res.cookie('siwe-session', siweMessage.address, {
         httpOnly: true,
         sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000
+        maxAge: 24 * 60 * 60 * 1000,
+        secure: process.env.NODE_ENV === 'production'
     });
 
     return res.status(200).json({ ok: true });
