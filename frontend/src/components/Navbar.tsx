@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                 <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                     <img
-                        src="/rps.png"
+                        src="https://raw.githubusercontent.com/NoOne-Cares/RPS-Prod/refs/heads/main/frontend/public/rps.png"
                         alt="RPS Logo"
                         className="w-10 h-10 rounded"
                     />
