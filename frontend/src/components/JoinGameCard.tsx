@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ImageOptions from "../utils/imageOptions.tsx";
+import ImageOptions from "../utils/imageOptions.ts";
 import type { Game } from "../types/Types.ts";
 
 type JoinGameCardProps = {
