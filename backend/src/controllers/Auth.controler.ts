@@ -7,7 +7,8 @@ const nonceHandler = AsyncHandler(async (req, res) => {
     const nonce = randomBytes(16).toString('hex');
     res.cookie('siwe-nonce', nonce, {
         httpOnly: true,
-        sameSite: 'none'
+        sameSite: 'none',
+        secure: process.env.NODE_ENV === 'production'
     });
     res.send(nonce);
 
@@ -19,6 +20,9 @@ const verifyHandler = AsyncHandler(async (req, res) => {
 
     if (!message || !signature || !nonce) {
         return res.status(400).json({ message: 'Missing message, signature, or nonce' });
+    }
+    if (!nonce) {
+        return res.status(400).json({ message: "Nonce is missing" });
     }
 
     const siweMessage = new SiweMessage(message);
