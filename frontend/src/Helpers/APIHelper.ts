@@ -1,6 +1,6 @@
 
 import { mapBackendGameToFrontend } from "./handleBackendData.ts";
-const BACKEND_URL = process.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 if (!BACKEND_URL) console.log("missing BACKEND_URL")
 export type CreateGamePayload = {
     contractId: `0x${string}`;

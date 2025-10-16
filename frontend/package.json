@@ -14,8 +14,6 @@
     "@tailwindcss/vite": "^4.1.14",
     "@tanstack/react-query": "^5.90.2",
     "@types/socket.io": "^3.0.2",
-    "crypto": "^1.0.1",
-    "dotenv": "^17.2.3",
     "env": "^0.0.2",
     "ethers": "^6.15.0",
     "jotai": "^2.15.0",
